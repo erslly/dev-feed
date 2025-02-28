@@ -44,6 +44,7 @@ export default function Home() {
 
     fetchNews();
 
+    // Sayfa kaydırma dinleyicisi
     const handleScroll = () => {
       setShowScroll(window.scrollY > 300);
     };
@@ -63,25 +64,25 @@ export default function Home() {
   });
 
   return (
-    <main className="max-w-4xl mx-auto p-4 relative">
-      <header className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl font-bold text-white dark:text-white">📡 Yazılım Haberleri</h1>
+    <main className="max-w-6xl mx-auto p-6 relative">
+      <header className="flex justify-between items-center mb-6">
+        <h1 className="text-4xl font-bold text-white dark:text-white">📡 Yazılım Haberleri</h1>
       </header>
 
-      <div className="flex items-center bg-gray-800 text-white rounded p-2 mb-4">
+      <div className="flex items-center bg-gray-900 text-white rounded-lg p-3 mb-6 shadow-lg">
         <Search className="text-gray-400" size={20} />
         <input
           type="text"
           placeholder="Haberlerde ara..."
-          className="bg-transparent outline-none ml-2 w-full"
+          className="bg-transparent outline-none ml-3 w-full text-lg"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
 
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between mb-6">
         <select 
-          className="p-2 rounded bg-gray-800 text-white"
+          className="p-3 rounded-lg bg-gray-900 text-white shadow-lg"
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
         >
@@ -90,7 +91,7 @@ export default function Home() {
         </select>
 
         <select 
-          className="p-2 rounded bg-gray-800 text-white"
+          className="p-3 rounded-lg bg-gray-900 text-white shadow-lg"
           value={selectedSource}
           onChange={(e) => setSelectedSource(e.target.value)}
         >
@@ -101,29 +102,28 @@ export default function Home() {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-  {news.length === 0 ? (
-    <div className="flex justify-center items-center w-full col-span-3">
-      <ClipLoader color="#3b82f6" size={50} />
-    </div>
-  ) : filteredNews.length > 0 ? (
-    filteredNews.map((item, index) => <NewsCard key={index} {...item} />)
-  ) : (
-    <p className="text-gray-500 text-center col-span-3">Hiç haber bulunamadı...</p>
-  )}
-</div>
-
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {news.length === 0 ? (
+          <div className="flex justify-center items-center w-full col-span-3">
+            <ClipLoader color="#3b82f6" size={50} />
+          </div>
+        ) : filteredNews.length > 0 ? (
+          filteredNews.map((item, index) => <NewsCard key={index} {...item} />)
+        ) : (
+          <p className="text-gray-500 text-center col-span-3">Hiç haber bulunamadı...</p>
+        )}
+      </div>
 
       <button 
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
-        className={`fixed bottom-6 right-6 bg-gray-700 text-white p-3 rounded-full shadow-lg transition-transform duration-300 ${
+        className={`fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-xl transition-transform duration-300 ${
           showScroll ? "opacity-100 scale-100" : "opacity-0 scale-0"
         }`}
       >
-        <ArrowUp size={24} />
+        <ArrowUp size={28} />
       </button>
 
-      <footer className="mt-10 text-center text-gray-500 text-sm pb-4">
+      <footer className="mt-12 text-center text-gray-500 text-sm pb-6">
         Made By{" "}
         <a 
           href="https://erslly.xyz/" 
