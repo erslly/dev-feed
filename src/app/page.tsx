@@ -5,7 +5,6 @@ import NewsCard from "@/components/NewsCard";
 import { Search, ArrowUp } from "lucide-react";
 import { ClipLoader } from "react-spinners";
 
-// Haberlerin türünü belirliyoruz (TypeScript için)
 type NewsItem = {
   title: string;
   link: string;
@@ -45,7 +44,6 @@ export default function Home() {
 
     fetchNews();
 
-    // Sayfa kaydırma dinleyicisi
     const handleScroll = () => {
       setShowScroll(window.scrollY > 300);
     };
@@ -116,7 +114,6 @@ export default function Home() {
 </div>
 
 
-      {/* En Üste Çık Butonu (Animasyonlu) */}
       <button 
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
         className={`fixed bottom-6 right-6 bg-gray-700 text-white p-3 rounded-full shadow-lg transition-transform duration-300 ${
@@ -126,7 +123,6 @@ export default function Home() {
         <ArrowUp size={24} />
       </button>
 
-      {/* Footer */}
       <footer className="mt-10 text-center text-gray-500 text-sm pb-4">
         Made By{" "}
         <a 
