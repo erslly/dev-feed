@@ -44,7 +44,6 @@ export default function Home() {
 
     fetchNews();
 
-    // Sayfa kaydırma dinleyicisi
     const handleScroll = () => {
       setShowScroll(window.scrollY > 300);
     };
@@ -116,12 +115,13 @@ export default function Home() {
 
       <button 
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
-        className={`fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-xl transition-transform duration-300 ${
-          showScroll ? "opacity-100 scale-100" : "opacity-0 scale-0"
+        className={`fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-md transition-all duration-300 ${
+          showScroll ? "opacity-80 scale-100" : "opacity-0 scale-75"
         }`}
       >
-        <ArrowUp size={28} />
+        <ArrowUp size={20} />
       </button>
+
 
       <footer className="mt-12 text-center text-gray-500 text-sm pb-6">
         Made By{" "}
