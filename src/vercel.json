@@ -1,0 +1,8 @@
+{
+    "build": {
+      "env": {
+        "NEXT_PUBLIC_ENV": "production"
+      }
+    }
+  }
+  
