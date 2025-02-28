@@ -1,8 +1,8 @@
 export async function getNews() {
     const urls = [
-      "https://hnrss.org/frontpage", // Hacker News
-      "https://dev.to/feed", // Dev.to
-      "https://www.reddit.com/r/programming/.rss", // Reddit Programming
+      "https://hnrss.org/frontpage", 
+      "https://dev.to/feed", 
+      "https://www.reddit.com/r/programming/.rss", 
     ];
   
     const fetchPromises = urls.map(async (url) => {
