@@ -4,38 +4,35 @@ body {
   @apply bg-gray-900 text-white;
 }
 @layer base {
-  /* Genel scrollbar ayarları */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #4b5563 #1f2937; /* Kaydırma çubuğu rengi */
+    scrollbar-color: #4b5563 #1f2937; 
   }
 
-  /* Chrome, Edge, Safari */
   *::-webkit-scrollbar {
     width: 8px;
   }
 
   *::-webkit-scrollbar-track {
-    background: #1f2937; /* Dark mode track */
+    background: #1f2937; 
   }
 
   *::-webkit-scrollbar-thumb {
-    background: #4b5563; /* Dark mode kaydırıcı */
+    background: #4b5563; 
     border-radius: 10px;
     border: 2px solid #1f2937;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: #6b7280; /* Hover efekti */
+    background: #6b7280; 
   }
 
-  /* Light Mode için */
   .light * {
     scrollbar-color: #9ca3af #f3f4f6;
   }
 
   .light *::-webkit-scrollbar-track {
-    background: #f3f4f6; /* Light mode track */
+    background: #f3f4f6; 
   }
 
   .light *::-webkit-scrollbar-thumb {
